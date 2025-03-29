@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pycrux"
+version = "0.1.0"
+description = "A simple library to set up Ollama and summarize text using local LLMs."
+authors = [{ name = "Shivang Agarwal", email = "shivangagarwal98@gmail.com" }]
+dependencies = ["ollama"]
+requires-python = ">=3.8"
+
+[tool.setuptools]
+packages = ["pycrux"]
+
+[project.optional-dependencies]
+pandas = ["pandas"]
+pyspark = ["pyspark"]

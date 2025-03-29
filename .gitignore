@@ -1,0 +1,25 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment
+venv/
+.env/
+
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore test coverage reports
+.coverage
+htmlcov/
+
+# Ignore logs
+logs/
+*.log
