@@ -49,6 +49,6 @@ def summarize_spark_dataframe(df, text_column, model_name="mistral", word_count=
     )
 
     # Apply the summarization UDF to create new column
-    result_df = df.withColumn(f"crux_{text_column}", summarize_udf(df[text_column]))
+    result_df = df.withColumn(f"summarize_{text_column}", summarize_udf(df[text_column]))
 
     return result_df

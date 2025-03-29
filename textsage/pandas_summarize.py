@@ -38,7 +38,7 @@ def summarize_pandas_dataframe(df, text_column, model_name="mistral", word_count
     if not pd.api.types.is_string_dtype(df[text_column]):
         raise ValueError(f"Column '{text_column}' must be of type string.")
 
-    df[f"crux_{text_column}"] = df[text_column].apply(
+    df[f"summarize_{text_column}"] = df[text_column].apply(
         lambda text: summarize_text(text, model_name, word_count)
     )
 
