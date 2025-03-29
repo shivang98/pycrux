@@ -1,6 +1,6 @@
-# PyCrux
+# TextSage
 
-PyCrux is a Python library that sets up Ollama and local LLMs for users and provides simple functions to summarize text, with support for Python, Pandas, and PySpark workflows.
+TextSage is a Python library that sets up Ollama and local LLMs for users and provides simple functions to summarize text, with support for Python, Pandas, and PySpark workflows.
 
 ## Features
 
@@ -18,7 +18,7 @@ PyCrux is a Python library that sets up Ollama and local LLMs for users and prov
 ## Installation
 
 ```bash
-pip install pycrux
+pip install textsage
 ```
 
 For development:
@@ -32,7 +32,7 @@ pip install -e .
 ### Basic Text Summarization
 
 ```python
-from pycrux import summarize_text
+from textsage import summarize_text
 
 text = "This is a long text that needs summarization."
 summary = summarize_text(text, model_name="mistral", word_count=10)
@@ -43,7 +43,7 @@ print(summary)
 
 ```python
 import pandas as pd
-from pycrux import summarize_dataframe
+from textsage import summarize_dataframe
 
 # Create a sample DataFrame
 df = pd.DataFrame({
@@ -59,7 +59,7 @@ print(result_df['summary'])
 
 ```python
 from pyspark.sql import SparkSession
-from pycrux import summarize_spark_dataframe
+from textsage import summarize_spark_dataframe
 
 # Create a Spark session
 spark = SparkSession.builder.getOrCreate()
@@ -75,7 +75,7 @@ result_df.show()
 
 ## Supported Models
 
-By default, PyCrux uses the 'mistral' model, but you can specify any model supported by Ollama:
+By default, textsage uses the 'mistral' model, but you can specify any model supported by Ollama:
 
 - mistral
 - llama2

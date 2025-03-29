@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pycrux"
+name = "textsage"
 version = "0.1.0"
 authors = [{ name = "Shivang Agarwal", email = "shivangagarwal98@gmail.com" }]
 description = "A simple library to set up Ollama and summarize text using local LLMs."
@@ -18,11 +18,11 @@ license = "MIT"
 license-files = ["LICEN[CS]E*"]
 
 [project.urls]
-Homepage = "https://github.com/shivang98/pycrux"
-Issues = "https://github.com/shivang98/pycrux/issues"
+Homepage = "https://github.com/shivang98/textsage"
+Issues = "https://github.com/shivang98/textsage/issues"
 
 [tool.setuptools]
-packages = ["pycrux"]
+packages = ["textsage"]
 
 [project.optional-dependencies]
 pandas = ["pandas"]

@@ -1,6 +1,6 @@
 import unittest
 
-from pycrux.summarize import summarize_text
+from textsage.summarize import summarize_text
 
 
 class TestSummarization(unittest.TestCase):

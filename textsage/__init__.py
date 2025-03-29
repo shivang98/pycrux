@@ -3,7 +3,7 @@ from .spark_summarize import summarize_spark_dataframe
 from .summarize import summarize_text
 
 """
-PyCrux is a Python library that sets up Ollama and local LLMs for users and provides a simple function to summarize text.
+textsage is a Python library that sets up Ollama and local LLMs for users and provides a simple function to summarize text.
 
 Author: Shivang Agarwal
 License: MIT
