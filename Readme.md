@@ -22,10 +22,10 @@ pip install textsage
 ```
 
 ## Dependency
-`textsage` uses Ollama to host a local LLM on your machine and perform summarization tasks. If Ollama is not already installed, the `textsage` package will attempt to install it on macOS and Linux. For Windows, please download Ollama directly from [here](https://ollama.com/download/windows).
+`textsage` uses Ollama to host a local LLM on your machine and perform summarization tasks. If Ollama is not already installed, the `textsage` package will attempt to install it on macOS and Linux using following commands.
 
 ```bash
-# macOS (Please ensure brew is installed on macOS)
+# macOS (Please ensure Homebrew is installed on macOS)
 brew install --cask ollama
 ```
 
@@ -33,6 +33,8 @@ brew install --cask ollama
 # linux
 curl -fsSL https://ollama.com/install.sh | sh
 ```
+
+For Windows, please download Ollama directly from [here](https://ollama.com/download/windows).
 
 The default quantized Mistral model (~4GB) will be downloaded and used for summarization. Ensure sufficient RAM is available for hosting the local LLM.
 
