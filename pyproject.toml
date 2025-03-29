@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "textsage"
 version = "0.1.2"
 authors = [{ name = "Shivang Agarwal", email = "shivangagarwal98@gmail.com" }]
-description = "A simple library to set up Ollama and summarize text using local LLMs."
+description = "Secure text summarization with local LLMs, with support for Python, Pandas, and PySpark workflows."
 readme = "README.md"
 dependencies = ["ollama", "pandas"]
 classifiers = [
