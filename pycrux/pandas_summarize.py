@@ -4,7 +4,7 @@ from .setup_ollama import ensure_ollama_setup
 from .summarize import summarize_text
 
 
-def summarize_pandas_dataframe(df, text_column, model_name="mistral"):
+def summarize_pandas_dataframe(df, text_column, model_name="mistral", word_count=10):
     """
     Summarize the contents of a specified text column in a
     pandas DataFrame.
@@ -14,6 +14,9 @@ def summarize_pandas_dataframe(df, text_column, model_name="mistral"):
         text_column (str): The name of the column to summarize.
         model_name (str): The name of the model to use for summarization.
                           Default is 'mistral'.
+        word_count (int): The maximum number of words for the summary.
+                          Default is 10.
+
     Raises:
         ValueError: If the specified text column does not exist or is not of type string.
 
@@ -36,7 +39,7 @@ def summarize_pandas_dataframe(df, text_column, model_name="mistral"):
         raise ValueError(f"Column '{text_column}' must be of type string.")
 
     df[f"crux_{text_column}"] = df[text_column].apply(
-        lambda text: summarize_text(text, model_name)
+        lambda text: summarize_text(text, model_name, word_count)
     )
 
     return df
