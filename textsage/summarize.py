@@ -17,7 +17,7 @@ def summarize_text(text, model_name, word_count=50):
         print(summary)
     Returns:
         str: The summarized text.
-    
+
     """
 
     messages = [

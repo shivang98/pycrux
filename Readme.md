@@ -21,11 +21,22 @@ TextSage is a Python library that sets up Ollama and local LLMs for users and pr
 pip install textsage
 ```
 
-For development:
+## Dependency
+`textsage` uses Ollama to host a local LLM on your machine and perform summarization tasks. If Ollama is not already installed, the `textsage` package will attempt to install it on macOS and Linux. For Windows, please download Ollama directly from [here](https://ollama.com/download/windows).
 
 ```bash
-pip install -e .
+# macOS (Please ensure brew is installed on macOS)
+brew install --cask ollama
 ```
+
+```bash
+# linux
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+The default quantized Mistral model (~4GB) will be downloaded and used for summarization. Ensure sufficient RAM is available for hosting the local LLM.
+
+> Note: Ollama and LLM installation is a one-time setup. Once installed, TextSage can be used directly without reinstallation.
 
 ## Usage
 

@@ -44,7 +44,9 @@ def summarize_spark_dataframe(df, text_column, model_name="mistral", word_count=
         raise ValueError(f"Column '{text_column}' must be of type string.")
 
     # Define UDF for text summarization
-    summarize_udf = udf(lambda text: summarize_text(text, model_name, word_count), StringType())
+    summarize_udf = udf(
+        lambda text: summarize_text(text, model_name, word_count), StringType()
+    )
 
     # Apply the summarization UDF to create new column
     result_df = df.withColumn(f"crux_{text_column}", summarize_udf(df[text_column]))
