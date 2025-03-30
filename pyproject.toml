@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "textsage"
-version = "0.1.3"
+version = "0.1.4"
 authors = [{ name = "Shivang Agarwal", email = "shivangagarwal98@gmail.com" }]
-description = "Secure text summarization with local LLMs, with support for Python, Pandas, and PySpark workflows."
+description = "Extract insights from text securely using local LLMs, now with enhanced support for Python, Pandas, and PySpark workflows."
 readme = "README.md"
-dependencies = ["ollama", "pandas"]
+dependencies = ["ollama"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
@@ -26,3 +26,4 @@ packages = ["textsage"]
 
 [project.optional-dependencies]
 pyspark = ["pyspark"]
+pandas = ["pandas"]

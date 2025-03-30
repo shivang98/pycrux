@@ -1,6 +1,7 @@
 import shutil
 import subprocess
 import sys
+import ollama
 
 OLLAMA_INSTALL_URL = "https://ollama.com/download"
 OLLAMA_LINUX_INSTALL_URL = "https://ollama.com/install.sh"
@@ -34,18 +35,26 @@ def pull_model(model_name="mistral"):
     if not is_ollama_installed():
         install_ollama()
 
-    print(f"Checking if model '{model_name}' is available...")
-    try:
-        subprocess.run(["ollama", "pull", model_name], check=True)
-        print(f"Model '{model_name}' is ready!")
-    except subprocess.CalledProcessError:
-        print(f"Failed to download model '{model_name}'. Check Ollama installation.")
+    # Check if the model already exsists
+    if ':' not in model_name:
+        model_name = f'{model_name}:latest'
+
+    all_models = ollama.list()
+    if any([i.model==model_name for i in all_models.models]):
+        return
+    else:
+        print(f"Downloading model '{model_name}'...")
+        # Attempt to pull the model
+        try:
+            subprocess.run(["ollama", "pull", model_name], check=True)
+            print(f"Model '{model_name}' is ready!")
+        except subprocess.CalledProcessError:
+            print(f"Failed to download model '{model_name}'. Check Ollama installation.")
 
 
 def ensure_ollama_setup(model_name="mistral"):
     """Ensure Ollama and the required model are set up."""
     if not is_ollama_installed():
         install_ollama()
-    else:
-        print("Ollama is already installed.")
+
     pull_model(model_name)
