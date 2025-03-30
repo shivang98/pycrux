@@ -1,6 +1,6 @@
 """
 TextSage is a Python library that sets up Ollama and local LLMs for users and 
-provides a simple function to summarize text.
+provides a simple function to analyse text.
 """
 
 from .llm_utils import summarize_text, analyze_sentiment, extract_key_phrases
